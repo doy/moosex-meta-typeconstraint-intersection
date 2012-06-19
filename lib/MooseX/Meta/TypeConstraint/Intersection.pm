@@ -132,6 +132,11 @@ sub validate {
     return join(q{ and } => map { $_->[0] } @{ $msgs }) . ' in ' . $self->name;
 }
 
+sub get_message {
+    my ($self, $value) = @_;
+    return $self->validate($value);
+}
+
 =method validate_all($value)
 
 Same as C<validate>, but returns an array reference of tuples with error
